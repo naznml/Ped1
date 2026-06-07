@@ -445,11 +445,6 @@ function makeOptions(correct, variant, questionText = ""){
 
   return shuffle([cleanedCorrect, ...wrongOptions]);
 }
-  const sameVariantAnswers=variant.items.map(x=>x.a);
-  const pool=[...new Set([...sameVariantAnswers,...EXTRA_OPTIONS])]
-    .filter(x=>norm(x)!==norm(correct));
-  return shuffle([correct,...shuffle(pool).slice(0,3)]);
-}
 
 function evidence(q,a){
   const text=norm(q+" "+a);
